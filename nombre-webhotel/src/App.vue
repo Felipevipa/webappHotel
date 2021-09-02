@@ -6,6 +6,42 @@
   <router-view/>
 </template>
 
+<script>
+  import axios from 'axios'
+
+  export default {
+    data() {
+      return {
+        todos: null
+      }
+    },
+    async mounted() {
+      try {
+        var result = await axios({
+          method: "POST",
+          url: 'https://apihotelg6.herokuapp.com',
+          data: {
+            query: `
+                {
+                    listarHabitacion {
+                        tipoHabitacion,
+                        numeroHabitacion,
+                        precio,
+                        imagen
+                  }
+                }
+            `
+          }
+        });
+        this.listarHabitacion = result.data.data.listarHabitacion;
+        console.log(this.listarHabitacion)
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  }
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
