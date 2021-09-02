@@ -1,9 +1,17 @@
 <template>
-  <div id="nav">
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+
   </div>
-  <router-view/>
+  <router-view/>-->
+  <h2>{{listarHabitacion}}</h2>
+  <br/>
+  <ul>
+    <li v-for="habitacion in listarHabitacion">
+      {{habitacion}}
+    </li>
+  </ul>
 </template>
 
 <script>
