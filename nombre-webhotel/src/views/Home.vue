@@ -1,27 +1,24 @@
 <template>
-  <div class="home">
+  <div v-if="!listarHabitacion" class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <p>working home...</p>
+    <p>working home....</p>
 
-    <table>
+    <table class="table table-striped table-bordered">
+      <thead>
       <tr>
-        <td>Tipo</td>
-        <td>Numero</td>
-        <td>Precio</td>
-        <td>Imagen</td>
+        <th>Tipo</th>
+        <th>Numero</th>
+        <th>Precio</th>
       </tr>
-
+      </thead>
+      <tbody>
       <tr v-for="habitacion in listarHabitacion" v-bind:key="habitacion">
-        <td v-for="item in habitacion" v-bind:key="item">
-          {{ item }} <br/>
-        </td>
+        <td>{{habitacion.tipoHabitacion}}</td>
+        <td>{{habitacion.numeroHabitacion}}</td>
+        <td>{{habitacion.precio}}</td>
+        <td> <img :src="habitacion.imagen" alt="" style="height : 600px"> </td>
       </tr>
-      <tr v-for="habitacion in listarHabitacion" v-bind:key="habitacion">
-        <td> {{ habitacion[0] }}</td>
-        <td> {{ habitacion[1] }}</td>
-        <td> {{ habitacion[2] }}</td>
-        <td> {{ habitacion[3] }}</td>
-      </tr>
+      </tbody>
     </table>
   </div>
 
@@ -34,6 +31,7 @@ import axios from 'axios'
 export default {
   name: 'Home',
   data() {
+
     return {
       todos: null
     }
