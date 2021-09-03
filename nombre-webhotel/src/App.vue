@@ -4,7 +4,8 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/reservas">Reservas</router-link> |
     <router-link to="/ReservacionPorDni">Consultar reserva</router-link> |
-    <router-link to="/buscarHabitacion">Consultar habitacion</router-link>
+    <router-link to="/buscarHabitacion">Consultar habitacion</router-link> |
+    <router-link to="/consultarFecha">Consultar Fecha</router-link>
 
   </div>
   <router-view/>
