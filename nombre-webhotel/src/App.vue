@@ -1,53 +1,18 @@
 <template>
-  <!-- <div id="nav">
+  <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
 
   </div>
-  <router-view/>-->
-  <h2>{{listarHabitacion}}</h2>
-  <br/>
-  <ul>
-    <li v-for="habitacion in listarHabitacion">
-      {{habitacion}}
-    </li>
-  </ul>
+  <router-view/>
+  <p>Working vueapp...</p>
+
+
+
 </template>
 
 <script>
-  import axios from 'axios'
 
-  export default {
-    data() {
-      return {
-        todos: null
-      }
-    },
-    async mounted() {
-      try {
-        var result = await axios({
-          method: "POST",
-          url: 'https://apihotelg6.herokuapp.com',
-          data: {
-            query: `
-                {
-                    listarHabitacion {
-                        tipoHabitacion,
-                        numeroHabitacion,
-                        precio,
-                        imagen
-                  }
-                }
-            `
-          }
-        });
-        this.listarHabitacion = result.data.data.listarHabitacion;
-        console.log(this.listarHabitacion)
-      } catch (error) {
-        console.error(error);
-      }
-    },
-  }
 </script>
 
 <style lang="scss">
