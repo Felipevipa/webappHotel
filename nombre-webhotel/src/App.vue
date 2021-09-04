@@ -31,6 +31,7 @@
 
 #nav {
   padding: 30px;
+  background:#ffdd90;
 
   a {
     font-weight: bold;
