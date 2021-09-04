@@ -6,8 +6,8 @@
     <router-link to="/ReservacionPorDni">Consultar reserva</router-link> |
     <router-link to="/buscarHabitacion">Consultar habitacion</router-link> |
     <router-link to="/consultarFecha">Consultar Fecha</router-link> |
-    <router-link to="/CrearHabitacion">Crear Habitacion</router-link>
-
+    <router-link to="/CrearHabitacion">Crear Habitacion</router-link> |
+    <router-link to="/crearReserva">Crear Reserva</router-link>
   </div>
   <router-view/>
   <p>Working vueapp...</p>

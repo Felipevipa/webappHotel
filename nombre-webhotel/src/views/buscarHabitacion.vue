@@ -17,6 +17,7 @@
         <td>{{resultado.precio}}</td>
         <td>{{resultado.tipoHabitacion}}</td>
         <td> <img :src="resultado.imagen" alt="" style="height : 200px"> </td>
+        <td><button v-on:click="eliminar(resultado.numeroHabitacion)" class="bg-danger"> Eliminar </button></td>
       </tr>
       </tbody>
     </table>
@@ -57,6 +58,9 @@ export default {
       } catch (error) {
         alert('Habitacion no encontrada')
       }
+    },
+    async eliminar(habitacion) {
+      alert(habitacion)
     },
   }
 }
