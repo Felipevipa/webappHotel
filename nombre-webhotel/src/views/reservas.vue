@@ -5,9 +5,9 @@
     <thead>
     <tr>
       <th>numeroReservacion</th>
-      <th>Numero</th>
-      <th>dni</th>
-      <th>fechaReservacion</th>
+      <th>Numero Habitacion</th>
+      <th>Cedula del cliente</th>
+      <th>FechaReservacion</th>
     </tr>
     </thead>
     <tbody>

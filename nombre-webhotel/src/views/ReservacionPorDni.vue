@@ -8,7 +8,7 @@
       <th>numeroReservacion</th>
       <th>Numero Habitacion</th>
       <th>Cedula del cliente</th>
-      <th>fechaReservacion</th>
+      <th>FechaReservacion</th>
     </tr>
     </thead>
     <tbody>
