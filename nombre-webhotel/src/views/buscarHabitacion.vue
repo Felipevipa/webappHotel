@@ -2,6 +2,24 @@
   <h1> Working consulta por dni</h1>
   <input type="number" id="habitacion" v-model="habitacion">
   <button v-on:click="buscar()"> Buscar </button>
+  <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Numero</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-if="resultado != null">
+        <td>{{resultado.numeroHabitacion}}</td>
+        <td>{{resultado.precio}}</td>
+        <td>{{resultado.tipoHabitacion}}</td>
+        <td> <img :src="resultado.imagen" alt="" style="height : 200px"> </td>
+      </tr>
+      </tbody>
+    </table>
 </template>
 
 <script>
@@ -11,7 +29,7 @@ export default {
   name: "buscarHabitacion",
   data() {
     return {
-      todos: null,
+      resultado: null,
       habitacion: 1,
     }
   },
@@ -34,10 +52,10 @@ export default {
             `, variables: {"mostrarInfoHabNumeroHabitacion": this.habitacion}
           }
         });
-        this.mostrarInfoHab = result.data.data.mostrarInfoHab;
-        console.log(this.mostrarInfoHab)
+        this.resultado = result.data.data.mostrarInfoHab;
+        console.log(this.resultado)
       } catch (error) {
-        console.error(error);
+        alert('Habitacion no encontrada')
       }
     },
   }

@@ -11,7 +11,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr v-for="reserva in listarReserva" v-bind:key="reserva">
+    <tr v-for="reserva in reservas" v-bind:key="reserva">
       <td>{{reserva.numeroRervacion}}</td>
       <td>{{reserva.numeroHabitacion}}</td>
       <td>{{reserva.dni}}</td>
@@ -29,7 +29,7 @@ export default {
   data() {
 
     return {
-      todos: null
+      reservas: null
     }
   },
   async mounted() {
@@ -50,8 +50,8 @@ export default {
             `
         }
       });
-      this.listarReserva = result.data.data.listarReserva;
-      console.log(this.listarReserva)
+      this.reservas = result.data.data.listarReserva;
+      console.log(this.reservas)
     } catch (error) {
       console.error(error);
     }

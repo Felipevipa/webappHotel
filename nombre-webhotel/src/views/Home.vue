@@ -9,14 +9,15 @@
         <th>Tipo</th>
         <th>Numero</th>
         <th>Precio</th>
+        <th>Imagen</th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="habitacion in listarHabitacion" v-bind:key="habitacion">
+      <tr v-for="habitacion in todos" v-bind:key="habitacion">
         <td>{{habitacion.tipoHabitacion}}</td>
         <td>{{habitacion.numeroHabitacion}}</td>
         <td>{{habitacion.precio}}</td>
-        <td> <img :src="habitacion.imagen" alt="" style="height : 600px"> </td>
+        <td> <img :src="habitacion.imagen" alt="" style="height : 200px"> </td>
       </tr>
       </tbody>
     </table>
@@ -33,7 +34,7 @@ export default {
   data() {
 
     return {
-      todos: null
+      todos: []
     }
   },
   async mounted() {
@@ -54,8 +55,8 @@ export default {
             `
         }
       });
-      this.listarHabitacion = result.data.data.listarHabitacion;
-      console.log(this.listarHabitacion)
+      this.todos = result.data.data.listarHabitacion;
+      console.log(this.todos)
     } catch (error) {
       console.error(error);
     }
