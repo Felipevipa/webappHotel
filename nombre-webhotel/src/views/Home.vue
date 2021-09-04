@@ -1,7 +1,6 @@
 <template>
   <div v-if="!listarHabitacion" class="home">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <p>working home....</p>
 
     <table class="table table-striped table-bordered">
       <thead>

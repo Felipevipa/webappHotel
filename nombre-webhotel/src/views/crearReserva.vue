@@ -1,5 +1,5 @@
 <template>
-  <h1>Working crear reserva...</h1>
+  <h1>CREAR RESERVA:</h1>
   <label for="numero">Numero de Habitacion</label> <br/>
   <input type="number" id="numero" v-model="numero"> <br/>
   <label for="dni">DNI:</label> <br/>
@@ -54,6 +54,7 @@ export default {
         alert('Habitacion no encontrada')
       }
     },
+
   }
 }
 </script>

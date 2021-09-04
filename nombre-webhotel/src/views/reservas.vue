@@ -1,5 +1,5 @@
 <template>
-  <h1>reservas working.</h1>
+  <h1>RESERVAS</h1>
 
   <table class="table table-striped table-bordered">
     <thead>

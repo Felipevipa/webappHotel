@@ -1,5 +1,5 @@
 <template>
-  <h1>Working crear habitacion</h1>
+  <h1>CREAR HABITACION:</h1>
   <label for="numero">Numero de habitacion: </label> <br/>
   <input type="number" id="numero" v-model="numero"> <br/>
   <label for="precio">Precio: </label> <br/>

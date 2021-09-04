@@ -1,11 +1,11 @@
 <template>
-  <h1> Working consulta por dni</h1>
+  <h1> Consultar reserva por DNI:</h1>
   <input type="number" id="dni" v-model="dni">
   <button v-on:click="buscar()"> Buscar </button>
   <table class="table table-striped table-bordered">
     <thead>
     <tr>
-      <th>numeroReservacion</th>
+      <th>Numero Reservacion</th>
       <th>Numero Habitacion</th>
       <th>Cedula del cliente</th>
       <th>FechaReservacion</th>
@@ -17,6 +17,7 @@
       <td>{{reserva.numeroHabitacion}}</td>
       <td>{{reserva.dni}}</td>
       <td>{{reserva.fechaReservacion}}</td>
+      <td><button v-on:click="eliminar(reserva.numeroRervacion)" class="bg-danger"> Elminar </button></td>
     </tr>
     </tbody>
   </table>
@@ -56,6 +57,31 @@ export default {
         console.log(this.reservaciones)
       } catch (error) {
         console.error(error);
+      }
+    },
+    async eliminar(numReserva) {
+      try {
+        var result = await axios({
+          method: "POST",
+          url: 'https://apihotelg6.herokuapp.com',
+          data: {
+            query: `
+                  mutation Mutation($eliminarReservaNumeroRervacion: Int!) {
+                      eliminarReserva(numeroRervacion: $eliminarReservaNumeroRervacion) {
+                        numeroRervacion
+                        numeroHabitacion
+                        dni
+                        fechaReservacion
+                      }
+                    }
+            `, variables: {"eliminarReservaNumeroRervacion": numReserva}
+          }
+        });
+        this.resultado = result.data.data.eliminarReserva;
+        console.log(this.resultado)
+        alert('Reserva eliminada')
+      } catch (error) {
+        alert('Reserva no encontrada')
       }
     },
     }

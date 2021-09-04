@@ -1,5 +1,5 @@
 <template>
-  <h1> Working consulta por fecha</h1>
+  <h1>CONSULTA DE HABITACIONES POR FECHA:</h1>
   <input type="date" id="fecha" v-model="fecha" min="2018-01-01" max="2030-12-31">
   <button v-on:click="buscar()"> Buscar </button>
   <table class="table table-striped table-bordered">

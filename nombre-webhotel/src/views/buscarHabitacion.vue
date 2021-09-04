@@ -1,5 +1,6 @@
 <template>
-  <h1> Working consulta por dni</h1>
+  <h1> CONSULTAR HABITACION</h1>
+  <label for="habitacion">Numero de Habitacion:</label>
   <input type="number" id="habitacion" v-model="habitacion">
   <button v-on:click="buscar()"> Buscar </button>
   <table class="table table-striped table-bordered">
