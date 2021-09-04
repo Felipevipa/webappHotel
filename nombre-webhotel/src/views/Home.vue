@@ -13,7 +13,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="habitacion in todos" v-bind:key="habitacion">
+      <tr v-for="habitacion in todos" v-bind:key="habitacion.numeroHabitacion">
         <td>{{habitacion.tipoHabitacion}}</td>
         <td>{{habitacion.numeroHabitacion}}</td>
         <td>{{habitacion.precio}}</td>
