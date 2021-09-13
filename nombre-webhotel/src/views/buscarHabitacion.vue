@@ -11,9 +11,9 @@
   <table class="table table-striped table-bordered">
       <thead>
       <tr>
-        <th>Tipo</th>
-        <th>Numero</th>
+        <th>Numero de Habitacion</th>
         <th>Precio</th>
+        <th>Tipo</th>
       </tr>
       </thead>
       <tbody>
@@ -25,7 +25,7 @@
       </tr>
       </tbody>
     </table>
-    <img :src= "resultado.imagen" alt="" style="height : 600px">
+    <img :src= "resultado.imagen" alt="" style="height : 600px" v-if="resultado">
     </div>
     <footer id="contacto">
       <div class="contenedor footer-content">
